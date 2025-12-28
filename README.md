@@ -71,5 +71,5 @@ README.md # Documentação geral do projeto
 
 ---
 
-## Como Executar o Projeto
-1. Clone o repositório:
+## 🧠 Considerações Finais
+Este projeto tem caráter educacional e foi desenvolvido com o objetivo de aplicar, de forma prática, os conceitos estudados na disciplina de Engenharia de Software, integrando desenvolvimento ágil, versionamento, testes automatizados e documentação técnica.
