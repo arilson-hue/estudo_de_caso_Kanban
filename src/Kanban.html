@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kanban</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,13 +32,28 @@
             padding: 5px;
             cursor: pointer;
         }
+
+        .task small {
+            display: block;
+            font-size: 12px;
+            color: #555;
+        }
     </style>
 </head>
 <body>
 
 <h1>Kanban</h1>
 
+<!-- Entrada da tarefa -->
 <input type="text" id="taskInput" placeholder="Nova demanda">
+
+<!-- MUDANÇA DE ESCOPO: prioridade -->
+<select id="priority">
+    <option value="Alta">Alta</option>
+    <option value="Média" selected>Média</option>
+    <option value="Baixa">Baixa</option>
+</select>
+
 <button onclick="addTask()">Adicionar</button>
 
 <div class="board">
@@ -62,11 +78,14 @@
 
     function addTask() {
         const input = document.getElementById("taskInput");
+        const priority = document.getElementById("priority").value;
+
         if (input.value === "") return;
 
         const task = {
             id: Date.now(),
             title: input.value,
+            priority: priority, // 🔹 mudança de escopo
             status: "todo"
         };
 
@@ -83,15 +102,20 @@
         tasks.forEach(task => {
             const div = document.createElement("div");
             div.className = "task";
-            div.innerText = task.title;
-            div.onclick = () => moveTask(task.id);
 
+            div.innerHTML = `
+                <strong>${task.title}</strong>
+                <small>Prioridade: ${task.priority}</small>
+            `;
+
+            div.onclick = () => moveTask(task.id);
             document.getElementById(task.status).appendChild(div);
         });
     }
 
     function moveTask(id) {
         const task = tasks.find(t => t.id === id);
+
         if (task.status === "todo") task.status = "doing";
         else if (task.status === "doing") task.status = "done";
         else task.status = "todo";
