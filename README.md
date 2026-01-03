@@ -1,6 +1,3 @@
-# estudo_de_caso_Kanban
-Sistema web simples
-
 # Kanban – Sistema de Gerenciamento de Tarefas
 
 ## Descrição do Projeto
@@ -27,6 +24,18 @@ No escopo inicial, o sistema contempla:
 - Alteração do status das tarefas (A Fazer, Em Progresso, Concluído)
 - Estrutura básica em HTML e JavaScript
 - Testes automatizados para validação do funcionamento
+
+---
+## Mudança de Escopo
+Durante o desenvolvimento do projeto, foi identificada a necessidade de melhorar a
+priorização das atividades. Dessa forma, foi adicionada uma nova funcionalidade ao sistema:
+
+- Definição de **prioridade da tarefa** (Alta, Média ou Baixa)
+
+Essa mudança teve como objetivo facilitar o foco em tarefas mais críticas, seguindo os
+princípios das metodologias ágeis, que valorizam adaptação a mudanças ao longo do projeto.
+
+A alteração foi registrada no Kanban do GitHub e implementada por meio de um novo commit.
 
 ---
 
